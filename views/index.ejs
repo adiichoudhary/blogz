@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+  <div class="blog-list-container">
+    <div class="blog-list">
+
+      <% if(allBlogs.length === 0){ %>
+
+        <div style="display: flex; justify-content: center; align-items: center; height: 65vh; width: 100%;">
+          <p>Wow so empty.. 🤷‍♂️</p>
+        </div>
+
+      <% } else { %>
+
+        <% allBlogs.forEach((blog) => { %>
+
+          <div class="blog">
+            <h2><a href="/blog/<%= allBlogs.indexOf(blog) %>"><%= blog.title %></a></h2>
+            <em>-by <%= blog.author %></em>
+            <p><%= blog.content.slice(0, 182) %> <em>...read more</em> </p>
+          </div>
+
+        <% }); %>
+
+      <% } %>   
+    </div>
+
+    <button onclick="window.location.href='/create';" class="btn btn-secondary">Create New Blog</button>
+  </div>
+
+  <%- include("partials/footer.ejs") %>

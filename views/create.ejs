@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+
+<% if(locals.postId) { %>
+    <div class="create-container">
+        <h1>Edit Blog</h1>
+    
+        <form action="/update" method="POST" class="create-form">
+            <input type="text" name="heading" placeholder="Blog Title" value="<%= blogTitle %>">
+            <input type="text" name="author" placeholder="Auther Name" value="<%= blogAuthor %>">
+            <textarea name="blog-content" id="" cols="30" rows="10" placeholder="Write your blog here"><%= blogContent %></textarea>
+            <input type="text" hidden name="index" value="<%= postId %>">
+            <button class="btn btn-secondary newBlog-btn" type="submit">Save Changes</button>
+        </form>
+    </div>
+<% } else { %>
+    <div class="create-container">
+        <h1>Create Blog</h1>
+    
+        <form action="/publish" method="POST" class="create-form">
+            <input type="text" name="heading" placeholder="Blog Title">
+            <input type="text" name="author" placeholder="Auther Name">
+            <textarea name="blog-content" id="" cols="30" rows="10" placeholder="Write your blog here"></textarea>
+            <button class="btn btn-secondary newBlog-btn" type="submit">Publish Blog</button>
+        </form>
+    </div>
+<% } %>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+<div class="view-container">
+    <div class="blog-container">
+        <h1><%= blogTitle  %></h1>
+        <em>-by <%= blogAuthor %></em>
+        <p><%= blogContent %></p>
+    </div>
+    
+    <div class="action-buttons">
+        <form action="/delete" method="post">
+            <input type="text" name="postId" hidden value="<%= postId %>">
+            <input type="submit" value="Delete Blog" class="btn btn-danger">
+        </form>
+        <button onclick="window.location.href='/edit/<%= postIdd %>';" class="btn btn-secondary">Edit Blog</button>    
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
