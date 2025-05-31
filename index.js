@@ -9,11 +9,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 //database connectivity
 const db = new pg.Client({
-    user: "postgres.htxcqpbbolrnpzoxarbb",
-    host:"aws-0-ap-south-1.pooler.supabase.com",
+    user: "postgres",
+    host:"db.kdknljwwppcrehdlfwwr.supabase.co",
     database:"postgres",
-    password:"Aditya@2311#",
-    port:"6543"
+    password:"normalNonsense2311",
+    port:"5432"
 });
 
 db.connect();
